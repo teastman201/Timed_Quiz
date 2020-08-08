@@ -1,10 +1,23 @@
-var countdown = document.querySelector("#countdown");
+var countdown = document.querySelector(".countdown");
 var timerSec = 10;
+var startButton = document.querySelector("#startButton");
+var seconds;
 
 function startGame() {
     timerSec;
-    timerSec--;
-    if (timerSec === 0) {
-        alert("You've run out of time. Game over.");
-    }
+
+    seconds = setInterval(function () {
+
+        timerSec--;
+        countdown.textContent = timerSec;
+
+        if (timerSec === 0 || timerSec < 1) {
+            clearInterval(seconds);
+            alert("You've run out of time. Game over.");
+        }
+
+    }, 1000);
 }
+
+startButton.addEventListener("click", startGame);
+
