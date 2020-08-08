@@ -4,14 +4,15 @@
 
     /* What else could I do here instead of this novice workaround? 
     I wanted the two child elements to be on the same line but on either side of the screen */
-    margin-right: 1175px;
+    margin-right: 1150px;
     
 }
 
 .time {
-     display: inline; 
-    
-    
+     display: inline;
+     margin-right: 1px;    
+}
 
-   
+.countdown {
+    display: inline;
 }
