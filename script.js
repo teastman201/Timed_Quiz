@@ -1,10 +1,23 @@
 var countdown = document.querySelector(".countdown");
-var timerSec = 10;
+var timerSec = 75;
 var startButton = document.querySelector("#startButton");
 var seconds;
 
+
+// Need to know how to undue hover function after user moves mouse away.\
+/*
+$(document).ready(function(){
+    $("button").hover(function(){
+      $(this).css("border-style", "dotted");
+      $(this).css("border-color", "blue");
+      }, function(){
+      $(this).css("background-color", "purple");
+    });
+  });
+  */
+
 function startGame() {
-    timerSec;
+    timerSec += 1;
 
     seconds = setInterval(function () {
 

@@ -1,37 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Timed Quiz</title>
+  <!-- Bootstrap CSS -->
+  <!--Below throws off styling, too much to deal with at the moment-->
+  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
   <link rel="stylesheet" href="./style.css">
-  <link
-      href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      rel="stylesheet"
-      href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
-    />
+  <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
 </head>
+
 <body>
+
   <div>
-    <a href="./highscores.html" class="anchor">View Highscores</a> 
+    <a href="./highscores.html" class="anchor">View Highscores</a>
     <p class="time">Time:</p>
-    <p class="countdown">0</p>   
+    <p class="countdown">0</p>
   </div>
+
   <div class="container">
-          
     <h1>Coding Quiz Challenge</h1>
-    <p class="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that nicorrect answers will penalize your score time by 10 seconds!</p>
-    <button aria-label="Start Quiz" id="startButton">Start Quiz
-      <i class="start" aria-hidden="true"></i>
+    <p class="instructions">Try to answer the following code-related questions within the time limit. Keep in mind that
+      nicorrect answers will penalize your score time by 10 seconds!</p>
+    <button aria-label="Start Quiz" id="startButton" class="buttons">Start Quiz
+      <!--What does this do >> --> <i class="start" aria-hidden="true"></i>
     </button>
-    
   </div>
+
+  <br>
+
+  <div class="w3-container mainContainer">
+      
+    <div class="w3-card-4" style="width:50%;">
+      <header class="w3-container ">
+        <h1>Commonly used data types DO NOT include:</h1>
+      </header>
   
+      <button class="w3-container buttonStack buttons">
+        1. strings
+      </button>
+      <button class="w3-container buttonStack buttons">
+        2. booleans
+      </button>
+      <button class="w3-container buttonStack buttons">
+        3. alerts
+      </button>
+      <button class="w3-container buttonStack buttons">
+        4. numbers
+      </button>
+  
+      <footer class="w3-container ">
+        <h5></h5>
+      </footer>
+    </div>
+  </div>
+
 
   <script src="./script.js"></script>
+
 </body>
+
 </html>

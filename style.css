@@ -21,15 +21,33 @@
     text-align: center;
 }
 
-#startButton {
+.buttons {
     background-color: rgb(138, 9, 138);
     color: white;
     border: none;
     border-radius: 7%;
+    margin: 3px;
 }
 
 .instructions {
-    width: 39%;
+    width: 75%;
+    height: 40px;
     padding-left: 400px;
-    
+    padding-top: 10px;
+    margin-bottom: 40px;    
+}
+
+.w3-container {
+     text-align: left;     
+}
+
+.buttonStack {
+    display: block;
+    position: relative;
+   left: 2%;
+}
+
+.w3-container h1 {
+    font-size: 25px;
+    font-weight: bold;
 }
