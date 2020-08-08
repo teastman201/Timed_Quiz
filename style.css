@@ -16,3 +16,20 @@
 .countdown {
     display: inline;
 }
+
+.container {
+    text-align: center;
+}
+
+#startButton {
+    background-color: rgb(138, 9, 138);
+    color: white;
+    border: none;
+    border-radius: 7%;
+}
+
+.instructions {
+    width: 39%;
+    padding-left: 400px;
+    
+}
