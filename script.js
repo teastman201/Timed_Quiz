@@ -2,7 +2,14 @@ var countdown = document.querySelector(".countdown");
 var timerSec = 75;
 var startButton = document.querySelector("#startButton");
 var seconds;
+document.querySelector('.correct'). 
+style.visibility = 'hidden';  
 
+document.querySelector('.wrong'). 
+style.visibility = 'hidden'; 
+
+document.querySelector('.horRow'). 
+style.visibility = 'hidden'; 
 
 // Need to know how to undue hover function after user moves mouse away.\
 /*
@@ -15,6 +22,10 @@ $(document).ready(function(){
     });
   });
   */
+
+  /* Why does querySelectorAll need to be used with [0]? */
+    
+ 
 
 function startGame() {
     timerSec += 1;
