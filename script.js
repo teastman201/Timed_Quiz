@@ -57,20 +57,24 @@ var test1 = {
 
 function startGame() {
     
+    document.querySelector('#startButton').style.visibility = 'hidden';
+    
     let questions = ["Commonly used data types DO NOT incldue:", "Commonly used data types DO NOT incldue:", "The condition in an if / else statement is enclosed within ___.", "Arrays in JavaScript can be used to store ___.", "String values must be enclosed within __ when being assigned to variables.", "A very useful tool used during development and debugging for printing content to the debugger is:", "All done!"];
 
-    let answers = ['strings', 'booleans', 'alerts', 'numbers', 'quotes', 'curly brackets', 'square brackets', '' ]
-    
-    cardTitle.innerHTML =  questions[3];
-    //  buttonCreate.innerHTML = document.createElement("BUTTON"); 
-    var btn0 = createButton;
-    var btn1 = createButton;
-    btn0.innerHTML = "answerOne";
-    btn1.innerHTML = "answerTwo";
-    cardText.textContent = "";  
-    cardText.appendChild(btn0, btn1); 
+    let answers = ['strings', 'booleans', 'alerts', 'numbers', 'quotes', 'curly brackets', 'square brackets', 'numbers and strings', 'other arrays', 'all of the above', 'commas', 'parentheses', 'JavaScript', 'terminal/bash', 'for loops', 'console.log']
 
-    cardTitle.innerHTML =  questions[3];
+    
+    
+    // cardTitle.innerHTML =  questions[3];
+    //  buttonCreate.innerHTML = document.createElement("BUTTON"); 
+    // var btn0 = createButton;
+    // var btn1 = createButton;
+    // btn0.innerHTML = "answerOne";
+    // btn1.innerHTML = "answerTwo";
+    // cardText.textContent = "";  
+    // cardText.appendChild(btn0, btn1); 
+
+    cardTitle.innerHTML =  questions[0];
     //  buttonCreate.innerHTML = document.createElement("BUTTON"); 
     var btn0 = createButton;
     var btn1 = createButton2;
