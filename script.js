@@ -14,8 +14,9 @@ var createButton5 = document.createElement("BUTTON");
 var inputCreate = document.querySelector(".card-body");
 var finalText = cardText;
 var finalMessage = document.createElement("p");
-var finalMessageNode = document.createTextNode("Enter your initials:");
+var info = {};
 
+// var finalMessageNode = document.createTextNode("Enter your initials:");
 var score = 0;
 var input = document.createElement("INPUT");
 
@@ -209,7 +210,9 @@ function startGame() {
         cardText.appendChild(btn4);
 
         btn4.innerHTML = 'Submit';
+        btn4.setAttribute('type', 'submit');
         input.setAttribute('type', 'text');
+        input.className = "inputInit";
 
         finalText.className = "finalStyle";
         // finalMessage.className = "finalMessage";
@@ -223,15 +226,28 @@ function startGame() {
 
         //cardText.appendChild(input);
         //cardText.appendChild(btn4);
-        var saveInput = document.getElementById("input");
-        btn4.addEventListener("click", submit);
-
+        var saveInput = document.querySelector(".inputInit");
+        
         function submit() {
-            saveInput;
-            localStorage.setItem("input", JSON.stringify(saveInput.value));
-            console.log(localStorage.getItem("input"));
+            // event.preventDefault();
+            // saveInput;
+            info.initials = document.querySelector('.inputInit').value;
+            localStorage.setItem("initials", JSON.stringify(info.initials));
+            
+            
+            saveInput.value = "";
+            // info.saveInput;
+            
+            console.log(localStorage.getItem("initials"));
+           //create an empty object
+           console.log(info.initials);
+            // info.lastName = document.getElementById('lastName').value;
+            // allInfo.push(info);//you had to initialize the array before
         }
+
+        btn4.addEventListener("click", submit);
     }
+    
 
     seconds = setInterval(function () {
 
