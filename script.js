@@ -10,8 +10,9 @@ var createButton = document.createElement("BUTTON");
 var createButton2 = document.createElement("BUTTON");
 var createButton3 = document.createElement("BUTTON");
 var createButton4 = document.createElement("BUTTON");
+var createButton5 = document.createElement("BUTTON");
 var inputCreate = document.querySelector(".card-body");
-
+var finalText = cardText;
 var score = 0;
 var input = document.createElement("INPUT");
 
@@ -90,6 +91,7 @@ function startGame() {
     var btn1 = createButton2;
     var btn2 = createButton3;
     var btn3 = createButton4;
+    var btn4 = createButton5;
 
     cardText.textContent = "";
     cardText.appendChild(btn0);
@@ -100,6 +102,7 @@ function startGame() {
     btn1.className = "buttons";
     btn2.className = "buttons";
     btn3.className = "buttons";
+    btn4.className = "submit";
 
     function wrong() {
         incAns.style.visibility = 'visible';
@@ -181,12 +184,18 @@ function startGame() {
         corAns.style.visibility = 'visible';
         score += 1;
         cardTitle.innerHTML = 'All done!';
+        // btn0.parentNode.removeChild(createButton);
         btn0.parentNode.removeChild(createButton);
         btn1.parentNode.removeChild(createButton2);
         btn2.parentNode.removeChild(createButton3);
         btn3.parentNode.removeChild(createButton4);
+        finalText.textContent = "Your final score is: " + ;
         cardText.appendChild(input);
+        cardText.appendChild(btn4);
+        
+        btn4.innerHTML = 'Submit';
         input.setAttribute('type', 'text');
+        
     }
 
     timerSec += 1;
