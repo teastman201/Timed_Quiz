@@ -124,11 +124,7 @@ function startGame() {
     // btn0.onclick = myFunction() {
     //     corAns.style.visibility = 'visible';
     // };
-    function wrong(){
-        incAns.style.visibility = 'visible';
-        timerSec - 10;        
-        testQ1;
-    }
+    
     
     
         cardTitle.innerHTML =  qOne.test1;
@@ -136,15 +132,18 @@ function startGame() {
         btn1.innerHTML = qOne.ans2;
         btn2.innerHTML = qOne.ans3;
         btn3.innerHTML = qOne.ans4;
+        if (btn0){
+        corAns.style.visibility = 'visible';
         btn0.addEventListener("click", testQ1);
+    }
         btn1.addEventListener("click", wrong);
         btn2.addEventListener("click", wrong);
         btn3.addEventListener("click", wrong);
         
     
             
-      var testQ1 =  function testQ1() {
-            corAns.style.visibility = 'visible';
+      function testQ1() {
+        corAns.style.visibility = 'hidden';
             score += 1;
             cardTitle.innerHTML =  qTwo.test1;
         btn0.innerHTML = qTwo.ans1;
@@ -156,9 +155,16 @@ function startGame() {
     
         }
 
-       var testQ2 = function testQ2() {
+       function testQ2() {
             
 
+        }
+
+        function wrong(){
+            incAns.style.visibility = 'visible';
+            timerSec - 10;        
+            testQ1;
+            incAns.style.visibility = 'hidden';
         }
 
     timerSec += 1;
