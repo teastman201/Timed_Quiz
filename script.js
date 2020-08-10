@@ -227,24 +227,30 @@ function startGame() {
         //cardText.appendChild(input);
         //cardText.appendChild(btn4);
         var saveInput = document.querySelector(".inputInit");
-        
+
         function submit() {
             // event.preventDefault();
             // saveInput;
-            info.initials = document.querySelector('.inputInit').value;
+            if (localStorage !== null) {
+                localStorage.getItem("initials");
+                info.initials = document.querySelector('.inputInit').value;
                 localStorage.setItem("initials", JSON.stringify(info.initials));
-                info.push(info.initials);            
-                        
-            console.log(localStorage.getItem("initials"));
-           //create an empty object
-           console.log(info.initials);
+                info.push(info.initials);
+
+                console.log(localStorage.getItem("initials"));
+                //create an empty object
+                console.log(info.initials);
+            }
+            else {
+                localStorage.setItem("initials", JSON.stringify(info.initials));
+            }
             // info.lastName = document.getElementById('lastName').value;
             // allInfo.push(info);//you had to initialize the array before
         }
 
         btn4.addEventListener("click", submit);
     }
-    
+
 
     seconds = setInterval(function () {
 
