@@ -89,7 +89,7 @@ function startGame() {
 
     // let answers = ['strings', 'booleans', 'alerts', 'numbers', 'quotes', 'curly brackets', 'square brackets', 'numbers and strings', 'other arrays', 'all of the above', 'commas', 'parentheses', 'JavaScript', 'terminal/bash', 'for loops', 'console.log']
     timerSec += 1;
-    document.querySelector('#startButton').style.visibility = 'hidden'; 
+    document.querySelector('#startButton').style.visibility = 'hidden';
     var btn0 = createButton;
     var btn1 = createButton2;
     var btn2 = createButton3;
@@ -192,22 +192,49 @@ function startGame() {
         btn1.parentNode.removeChild(createButton2);
         btn2.parentNode.removeChild(createButton3);
         btn3.parentNode.removeChild(createButton4);
-        finalText.className = "finalStyle";
+        document.querySelector("body > div.card > div > p").append(finalMessage);
         finalMessage.className = "finalMessage";
-        cardText.appendChild(finalMessage);
-        finalMessage = finalMessageNode;
-        finalMessage;
-        // finalMessage.textContent = "Enter your initials: ";
+        finalMessage.textContent = "Enter your initials: ";
         finalText.textContent = `Your final score is: ` + score + `.`;
-        
+
+        cardText.appendChild(finalMessage);
+        finalText.className = "finalStyle";
+
+
+        // finalMessage = finalMessageNode;
+        // finalMessage;
+
+
         cardText.appendChild(input);
         cardText.appendChild(btn4);
-        
+
         btn4.innerHTML = 'Submit';
         input.setAttribute('type', 'text');
+
+        finalText.className = "finalStyle";
+        // finalMessage.className = "finalMessage";
+        // finalMessage.textContent = "Enter your initials: ";
+
+        // cardText.appendChild(finalMessage);
+        // finalMessage = finalMessageNode;
+        // finalMessage;
+        //finalMessage.textContent = "Enter your initials: ";
+        //finalText.textContent = `Your final score is: ` + score + `.`;
+
+        //cardText.appendChild(input);
+        //cardText.appendChild(btn4);
+        var saveInput = document.getElementById("input");
+        btn4.addEventListener("click", submit);
+
+        function submit() {
+            saveInput;
+            localStorage.setItem(input, saveInput.value);
+            console.log(localStorage.getItem("input"));
+        }
         
+
     }
-    
+
     seconds = setInterval(function () {
 
         timerSec--;

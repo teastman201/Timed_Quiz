@@ -28,7 +28,8 @@
 }
 
 .finalMessage {
-    display: inline-block;
+    display: block;
+    /* float: left; */
 }
 
 .submit {
