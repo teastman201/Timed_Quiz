@@ -13,6 +13,9 @@ var createButton4 = document.createElement("BUTTON");
 var createButton5 = document.createElement("BUTTON");
 var inputCreate = document.querySelector(".card-body");
 var finalText = cardText;
+var finalMessage = document.createElement("p");
+var finalMessageNode = document.createTextNode("Enter your initials:");
+
 var score = 0;
 var input = document.createElement("INPUT");
 
@@ -85,7 +88,7 @@ function startGame() {
     //  let questions = ["Commonly used data types DO NOT incldue:", "The condition in an if / else statement is enclosed within ___.", "Arrays in JavaScript can be used to store ___.", "String values must be enclosed within __ when being assigned to variables.", "A very useful tool used during development and debugging for printing content to the debugger is:", "All done!"];
 
     // let answers = ['strings', 'booleans', 'alerts', 'numbers', 'quotes', 'curly brackets', 'square brackets', 'numbers and strings', 'other arrays', 'all of the above', 'commas', 'parentheses', 'JavaScript', 'terminal/bash', 'for loops', 'console.log']
-
+    timerSec += 1;
     document.querySelector('#startButton').style.visibility = 'hidden'; 
     var btn0 = createButton;
     var btn1 = createButton2;
@@ -189,7 +192,14 @@ function startGame() {
         btn1.parentNode.removeChild(createButton2);
         btn2.parentNode.removeChild(createButton3);
         btn3.parentNode.removeChild(createButton4);
-        finalText.textContent = "Your final score is: " + ;
+        finalText.className = "finalStyle";
+        finalMessage.className = "finalMessage";
+        cardText.appendChild(finalMessage);
+        finalMessage = finalMessageNode;
+        finalMessage;
+        // finalMessage.textContent = "Enter your initials: ";
+        finalText.textContent = `Your final score is: ` + score + `.`;
+        
         cardText.appendChild(input);
         cardText.appendChild(btn4);
         
@@ -197,10 +207,7 @@ function startGame() {
         input.setAttribute('type', 'text');
         
     }
-
-    timerSec += 1;
-
-    console.log(seconds);
+    
     seconds = setInterval(function () {
 
         timerSec--;

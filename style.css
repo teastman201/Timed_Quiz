@@ -22,6 +22,15 @@
     text-align: center;
 }
 
+.finalStyle {
+    font-weight: bold;
+    
+}
+
+.finalMessage {
+    display: inline-block;
+}
+
 .submit {
     display: inline;
     background-color: rgb(138, 9, 138);
