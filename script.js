@@ -7,6 +7,9 @@ var cardTitle = document.querySelector(".card-title");
 var buttonCreate = document.querySelector(".card-body");
 var body = document.body.children[1];
 var createButton = document.createElement("BUTTON");
+var createButton2 = document.createElement("BUTTON");
+var createButton3 = document.createElement("BUTTON");
+var createButton4 = document.createElement("BUTTON");
 
 
 /* Why does querySelectorAll need to be used with [0]? */
@@ -67,7 +70,25 @@ function startGame() {
     cardText.textContent = "";  
     cardText.appendChild(btn0, btn1); 
 
-   
+    cardTitle.innerHTML =  questions[3];
+    //  buttonCreate.innerHTML = document.createElement("BUTTON"); 
+    var btn0 = createButton;
+    var btn1 = createButton2;
+    var btn2 = createButton3;
+    var btn3 = createButton4;
+    btn0.innerHTML = "answerOne";
+    btn1.innerHTML = "answerTwo";
+    btn2.innerHTML = "answerThree";
+    btn3.innerHTML = "answerFour";    
+    cardText.textContent = "";  
+    cardText.appendChild(btn0);
+    cardText.appendChild(btn1);
+    cardText.appendChild(btn2);
+    cardText.appendChild(btn3);
+    btn0.className = "buttons";
+    btn1.className = "buttons";
+    btn2.className = "buttons";
+    btn3.className = "buttons";
     
     
     timerSec += 1;
