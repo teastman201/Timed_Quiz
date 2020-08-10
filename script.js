@@ -232,12 +232,10 @@ function startGame() {
             // event.preventDefault();
             // saveInput;
             info.initials = document.querySelector('.inputInit').value;
-            localStorage.setItem("initials", JSON.stringify(info.initials));
+                localStorage.setItem("initials", JSON.stringify(info.initials));
+                info.push(info.initials);
             
-            
-            saveInput.value = "";
-            // info.saveInput;
-            
+                        
             console.log(localStorage.getItem("initials"));
            //create an empty object
            console.log(info.initials);
