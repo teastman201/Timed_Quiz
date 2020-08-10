@@ -14,7 +14,7 @@ var createButton5 = document.createElement("BUTTON");
 var inputCreate = document.querySelector(".card-body");
 var finalText = cardText;
 var finalMessage = document.createElement("p");
-var info = {};
+var info = [];
 
 // var finalMessageNode = document.createTextNode("Enter your initials:");
 var score = 0;
@@ -233,8 +233,7 @@ function startGame() {
             // saveInput;
             info.initials = document.querySelector('.inputInit').value;
                 localStorage.setItem("initials", JSON.stringify(info.initials));
-                info.push(info.initials);
-            
+                info.push(info.initials);            
                         
             console.log(localStorage.getItem("initials"));
            //create an empty object
