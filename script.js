@@ -228,11 +228,9 @@ function startGame() {
 
         function submit() {
             saveInput;
-            localStorage.setItem(input, saveInput.value);
+            localStorage.setItem("input", JSON.stringify(saveInput.value));
             console.log(localStorage.getItem("input"));
         }
-        
-
     }
 
     seconds = setInterval(function () {
