@@ -10,7 +10,11 @@ var createButton = document.createElement("BUTTON");
 var createButton2 = document.createElement("BUTTON");
 var createButton3 = document.createElement("BUTTON");
 var createButton4 = document.createElement("BUTTON");
+var inputCreate = document.querySelector(".card-body");
+
 var score  = 0;
+var input = document.createElement("INPUT");
+
 var qOne = {
     test1: "Commonly used data types DO NOT incldue:",
     ans1: "strings",
@@ -124,48 +128,97 @@ function startGame() {
     // btn0.onclick = myFunction() {
     //     corAns.style.visibility = 'visible';
     // };
-    
-    
+
+    function wrong(){
+        incAns.style.visibility = 'visible';
+        timerSec - 10;        
+        testQ1;
+        incAns.style.visibility = 'hidden';
+    }
     
         cardTitle.innerHTML =  qOne.test1;
-        btn0.innerHTML = qOne.ans1;
+        btn0.innerHTML = qOne.ans3;
         btn1.innerHTML = qOne.ans2;
-        btn2.innerHTML = qOne.ans3;
+        btn2.innerHTML = qOne.ans1;
         btn3.innerHTML = qOne.ans4;
-        if (btn0){
-        corAns.style.visibility = 'visible';
+        
         btn0.addEventListener("click", testQ1);
-    }
+
         btn1.addEventListener("click", wrong);
         btn2.addEventListener("click", wrong);
-        btn3.addEventListener("click", wrong);
-        
-    
+        btn3.addEventListener("click", wrong); 
             
       function testQ1() {
-        corAns.style.visibility = 'hidden';
-            score += 1;
-            cardTitle.innerHTML =  qTwo.test1;
+        corAns.style.visibility = 'visible';
+        score += 1;          
+        cardTitle.innerHTML = qTwo.test1;
         btn0.innerHTML = qTwo.ans1;
         btn1.innerHTML = qTwo.ans2;
         btn2.innerHTML = qTwo.ans3;
-        btn3.innerHTML = qTwo.ans4;
-
-        testQ2;        
-    
+        btn3.innerHTML = qTwo.ans4;             
+        btn0.addEventListener("click", wrong);
+        btn1.addEventListener("click", wrong);
+        btn2.addEventListener("click", testQ2);
+        btn3.addEventListener("click", wrong); 
         }
 
-       function testQ2() {
-            
-
+        function testQ2(){
+        corAns.style.visibility = 'visible';
+        score += 1;          
+        cardTitle.innerHTML = qThree.test1;
+        btn0.innerHTML = qThree.ans1;
+        btn1.innerHTML = qThree.ans2;
+        btn2.innerHTML = qThree.ans3;
+        btn3.innerHTML = qThree.ans4;             
+        btn0.addEventListener("click", wrong);
+        btn1.addEventListener("click", wrong);
+        btn2.addEventListener("click", wrong);
+        btn3.addEventListener("click", testQ3);
         }
 
-        function wrong(){
-            incAns.style.visibility = 'visible';
-            timerSec - 10;        
-            testQ1;
-            incAns.style.visibility = 'hidden';
+        function testQ3() {
+            corAns.style.visibility = 'visible';
+        score += 1;          
+        cardTitle.innerHTML = qFour.test1;
+        btn0.innerHTML = qFour.ans1;
+        btn1.innerHTML = qFour.ans2;
+        btn2.innerHTML = qFour.ans3;
+        btn3.innerHTML = qFour.ans4;             
+        btn0.addEventListener("click", wrong);
+        btn1.addEventListener("click", wrong);
+        btn2.addEventListener("click", testQ4);
+        btn3.addEventListener("click", wrong);
         }
+
+        function testQ4() {
+            corAns.style.visibility = 'visible';
+        score += 1;          
+        cardTitle.innerHTML = qFive.test1;
+        btn0.innerHTML = qFive.ans1;
+        btn1.innerHTML = qFive.ans4;
+        btn2.innerHTML = qFive.ans3;
+        btn3.innerHTML = qFive.ans2;             
+        btn0.addEventListener("click", wrong);
+        btn1.addEventListener("click", endGame);
+        btn2.addEventListener("click", wrong);
+        btn3.addEventListener("click", wrong);
+        }
+
+        function endGame() {
+            clearInterval(seconds);
+            corAns.style.visibility = 'visible';
+        score += 1;          
+        cardTitle.innerHTML = 'All done!';
+        btn0.style.visibility = 'hidden';
+        btn1.style.visibility = 'hidden';
+        btn2.style.visibility = 'hidden';
+        btn3.style.visibility = 'hidden'; 
+        inputCreate = input; 
+        input.setAttribute('type', 'text');
+        }
+
+        
+      
 
     timerSec += 1;
     
