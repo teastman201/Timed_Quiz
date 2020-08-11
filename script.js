@@ -14,7 +14,14 @@ var createButton5 = document.createElement("BUTTON");
 var inputCreate = document.querySelector(".card-body");
 var finalText = cardText;
 var finalMessage = document.createElement("p");
-var info = [];
+var info = []; //and array of objects ie {initials: "" highscore: 0}
+var viewHighScores = document.querySelector('.anchor');
+var hideCorrect = document.querySelector('.correct');
+var hideIncorrect = document.querySelector('.wrong');
+var hideRow = document.querySelector('.horRow');
+
+    
+// var highscores = ;
 
 // var finalMessageNode = document.createTextNode("Enter your initials:");
 var score = 0;
@@ -60,12 +67,6 @@ var corAns = document.querySelector('.correct');
 var incAns = document.querySelector('.wrong');
 
 /* Why does querySelectorAll need to be used with [0]? */
-document.querySelector('.correct').style.visibility = 'hidden';
-
-document.querySelector('.wrong').style.visibility = 'hidden';
-
-document.querySelector('.horRow').
-    style.visibility = 'hidden';
 
 var cardBody = document.querySelector(".card-title");
 
@@ -86,6 +87,10 @@ $(document).ready(function(){
 
 function startGame() {
 
+
+    hideRow.style.visibility = 'hidden';
+    hideIncorrect.style.visibility = 'hidden';
+    hideCorrect.style.visibility = 'hidden';
     //  let questions = ["Commonly used data types DO NOT incldue:", "The condition in an if / else statement is enclosed within ___.", "Arrays in JavaScript can be used to store ___.", "String values must be enclosed within __ when being assigned to variables.", "A very useful tool used during development and debugging for printing content to the debugger is:", "All done!"];
 
     // let answers = ['strings', 'booleans', 'alerts', 'numbers', 'quotes', 'curly brackets', 'square brackets', 'numbers and strings', 'other arrays', 'all of the above', 'commas', 'parentheses', 'JavaScript', 'terminal/bash', 'for loops', 'console.log']
@@ -231,19 +236,68 @@ function startGame() {
         function submit() {
             // event.preventDefault();
             // saveInput;
-            if (localStorage !== null) {
-                localStorage.getItem("initials");
-                info.initials = document.querySelector('.inputInit').value;
-                localStorage.setItem("initials", JSON.stringify(info.initials));
-                info.push(info.initials);
+            // if (localStorage !== null) {
+                
+                
+                //create object with user details * {initials: "" highscore: 0}
+                const userObj = {
+                    initals: document.querySelector('.inputInit').value,
+                    score: 0
+                }
 
-                console.log(localStorage.getItem("initials"));
-                //create an empty object
-                console.log(info.initials);
-            }
-            else {
-                localStorage.setItem("initials", JSON.stringify(info.initials));
-            }
+                //get highscores from localstorage and store in variable
+                info = JSON.parse(localStorage.getItem("score")) || [];                
+                
+                // //set info to existing or empty []
+                // info = (existing) ? existing 
+
+                //add new user object
+                info.push(userObj);                
+
+                localStorage.setItem("score", JSON.stringify(info));                
+                
+                window.location = viewHighScores;
+                // console.log(localStorage.getItem("initials"));
+                // //create an empty object
+                // console.log(info.initials);
+
+                // const setToLocal = (initials) => {    
+        
+                //     const userScores = localStorage.getItem("userScore")
+                          
+                //             console.log(userScores)
+                //             if ( userScores ) {
+                //                 const currentList = JSON.parse(userScores);  
+                //                 currentList.push({score: userScore, initial: initials});
+                //             localStorage.setItem("userScore", JSON.stringify(currentList));
+                //             } else {
+                //             const userScoreList = []
+                               
+                //             userScoreList.push({score: userScore, initial: initials});
+                //             localStorage.setItem("userScore", JSON.stringify(userScoreList));
+                //             }
+                //         }
+            
+
+                
+                // highscores.push(newScore);
+                // localStorage.setItem('highscores', JSON.stringify(highscores));
+                
+                
+                // const userScores = localStorage.getItem("userScore")
+                              
+                //                 console.log(userScores)
+                //                 if ( userScores ) {
+                //                     const currentList = JSON.parse(userScores);  
+                //                     let initial = ''
+                
+                //                     currentList.push({score: userScore, initial: initial});
+                //                 localStorage.setItem("userScore", JSON.stringify(currentList));
+                //                 }
+            // }
+            // else {
+            //     localStorage.setItem("initials", JSON.stringify(info.initials));
+            // }
             // info.lastName = document.getElementById('lastName').value;
             // allInfo.push(info);//you had to initialize the array before
         }
