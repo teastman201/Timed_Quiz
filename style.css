@@ -32,6 +32,15 @@
     /* float: left; */
 }
 
+.highButtons {
+    display: inline;
+    background-color: rgb(138, 9, 138);
+    color: white;
+    border: none;
+    border-radius: 7%;
+    margin: 3px;
+}
+
 .submit {
     display: inline;
     background-color: rgb(138, 9, 138);

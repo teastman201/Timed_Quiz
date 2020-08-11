@@ -19,6 +19,8 @@ var viewHighScores = document.querySelector('.anchor');
 var hideCorrect = document.querySelector('.correct');
 var hideIncorrect = document.querySelector('.wrong');
 var hideRow = document.querySelector('.horRow');
+var goBackButton = document.querySelector('#goBack');
+
 
     
 // var highscores = ;
@@ -303,6 +305,13 @@ function startGame() {
         }
 
         btn4.addEventListener("click", submit);
+    }
+
+    goBackButton.addEventListener("click", goBack);
+
+    function goBack() {
+        
+        window.location = "./index.html";
     }
 
 
