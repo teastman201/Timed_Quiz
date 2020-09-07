@@ -8,7 +8,9 @@
   <title>Timed Quiz</title>
   <!-- Bootstrap CSS -->
   <!--Below throws off styling, too much to deal with at the moment-->
-  <!--  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous"> -->
+  <link href="https://fonts.googleapis.com/css2?family=Krona+One&family=Roboto+Condensed&display=swap"
+        rel="stylesheet">
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
   <link rel="stylesheet" href="./Assets/style.css">
   <!-- <link href="https://fonts.googleapis.com/css?family=Amatic+SC:700|Josefin+Sans&display=swap" rel="stylesheet" /> -->
   <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" /> -->
@@ -40,42 +42,51 @@
         <p class="correct">Correct!</p>
     </footer>
   </div> -->
-
-  <div class="card" style="width: 18rem;">
-    <div class="card-body">
-      <h5 class="card-title">Coding Quiz Challenge</h5>
-      
+<div class="Card-group">
+  <div class="card" style="width: 18rem;" id="startDiv"> 
+    <div class="card-body " id="removeElem">      
+      <h5 class="card-title">Coding Quiz Challenge</h5>      
       <p class="card-text">Try to answer the following code-related questions within the time limit. Keep in mind that
         incorrect answers will penalize your score time by 10 seconds!</p>
-        <button aria-label="Start Quiz" id="startButton" class="buttons">Start Quiz
+        <button aria-label="Start Quiz" id="startButton" class="buttons startButton" onclick="startQuiz()">Start Quiz
           <i class="start" aria-hidden="true"></i>
         </button>
-
-        <!--
-        <button aria-label="Start Quiz" id="startButton" class="quizButtons">
-          <i class="start" aria-hidden="true"></i>
-        </button>
-        <button aria-label="Start Quiz" id="startButton" class="quizButtons">
-          <i class="start" aria-hidden="true"></i>
-        </button>
-        <button aria-label="Start Quiz" id="startButton" class="quizButtons">
-          <i class="start" aria-hidden="true"></i>
-        </button>
-        -->
-      
-      <footer class="card-footer">
-        <hr class="horRow">
-          <p class="wrong">Wrong!</p>
-          <p class="correct">Correct!</p>
-      </footer>
     </div>
   </div>
-
-  <br>
+    <div class="card" style="width: 18rem;" id="questionsDiv">
+      <div class="card-body">      
+        <h5 class="card-title" id="quesTittle"></h5>      
+        <p class="card-text" id="quesBody">Try to answer the following code-related questions within the time limit. Keep in mind that
+          incorrect answers will penalize your score time by 10 seconds!</p>
+          <button aria-label="Ans1" id="Ans1" class="buttons">Start Quiz
+            <i class="start" aria-hidden="true"></i>
+          </button>
+          <button aria-label="Ans2" id="Ans2" class="buttons">Start Quiz
+            <i class="start" aria-hidden="true"></i>
+          </button>
+          <button aria-label="Ans3" id="Ans3" class="buttons">Start Quiz
+            <i class="start" aria-hidden="true"></i>
+          </button>
+          <button aria-label="Ans4" id="Ans4" class="buttons">Start Quiz
+            <i class="start" aria-hidden="true"></i>
+          </button>
+      </div>    
+  </div>
+  
+</div>
+  <!-- <footer class="card-footer">
+      <hr class="horRow">
+        <p class="wrong">Wrong!</p>
+        <p class="correct">Correct!</p>
+    </footer> -->
+  
 
   
 
-
+  
+  <script defer src="https://use.fontawesome.com/releases/v5.3.1/js/all.js"></script>
+  <script src="https://code.jquery.com/jquery-1.11.0.min.js"
+  integrity="sha256-spTpc4lvj4dOkKjrGokIrHkJgNA0xMS98Pw9N7ir9oI=" crossorigin="anonymous"></script>
   <script src="./Assets/script.js"></script>
 
 </body>
