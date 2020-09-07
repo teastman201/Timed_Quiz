@@ -1,16 +1,85 @@
 questionsDiv.style.visibility = 'hidden';
+myArray = [
+    // Start questions for quiz
+    questOne = ["Commonly used data types DO NOT incldue:", "strings", 'booleans', "alerts", 'numbers'],
+    questTwo = ["The condition in an if / else statement is enclosed within ___.", "quotes", 'curly brackets', "parentheses", 'square brackets'],
+    questThree = ["Arrays in JavaScript can be used to store ___.", "numbers and strings", 'booleans', "other arrays", 'all of the above'],
+    questFour = ["String values must be enclosed within __ when being assigned to variables.", "commas", 'curly brackets', "quotes", 'parentheses'],
+    questFive = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']
+    // End questions for quiz
+]
 
-function startQuiz(){
-    // startDiv.style.visibility = "hidden";
+console.log(myArray);
+
+function startQuiz() {
+    // Hides answer check area
     questionsDiv.style.visibility = 'visible';
-   removeElement();
-    console.log('test');
-    
+    // Deletes start screen
+    document.getElementById("removeElem").remove();
+    // Gets random question to start game
+    randomizeQuestions();
+    // Populates quiz game
+    populateQuiz();
+
 }
 
-function removeElement(elementId) {
-    // Removes an element from the document
-    var element = document.getElementById("#removeElem");
-    element.parentNode.removeChild(element);
+
+function randomizeQuestions() {
+    questionsArray = [
+        questOne[0],
+        questTwo[0],
+        questThree[0],
+        questFour[0],
+        questFive[0]
+    ]
+    randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+    console.log(randomQuestion); // returns multiple responses for the same line in console.
+    return randomQuestion;
+};
+
+function populateQuiz() {
+
+    if (randomQuestion == myArray[0][0] || randomQuestion == myArray[1][0] || randomQuestion == myArray[2][0] || randomQuestion == myArray[3][0] || randomQuestion == myArray[4][0]) {
+        $("#quesBody").text(randomizeQuestions());
+    }
+    checkAns();
+    
+};
+
+function checkAns() {
+    if (randomQuestion == myArray[0][0]) {
+        for (i = 1; i < myArray[0].length; i++) {
+            $("#ans" + i).text(myArray[0][i]);
+        }
+    }
+    if (randomQuestion == myArray[1][0]) {
+        for (i = 1; i < myArray[1].length; i++) {
+            $("#ans" + i).text(myArray[1][i]);
+        }
+    }
+    if (randomQuestion == myArray[2][0]) {
+        for (i = 1; i < myArray[2].length; i++) {
+            $("#ans" + i).text(myArray[2][i]);
+        }
+    }
+    if (randomQuestion == myArray[3][0]) {
+        for (i = 1; i < myArray[3].length; i++) {
+            $("#ans" + i).text(myArray[3][i]);
+        }
+    }
+    if (randomQuestion == myArray[4][0]) {
+        for (i = 1; i < myArray[4].length; i++) {
+            $("#ans" + i).text(myArray[4][i]);
+        }
+    }
+
+    editArray();
 }
+
+function editArray() {
+    myArray.splice(randomQuestion, 1); // removes only the first item of the array
+    console.log(myArray);
+}
+// console.log(randomizeQuestions());
+
 
