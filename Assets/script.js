@@ -12,7 +12,7 @@ myArray = [
     questFive = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']
     // End questions for quiz
 ]
-// console.log(myArray);
+console.log(myArray);
 
 function startQuiz() {
     // Hides answer check area
@@ -54,7 +54,7 @@ function checkAns() {
     if (randomQuestion == myArray[0][0]) {
         for (i = 1; i < myArray[0].length; i++) {
             $("#ans" + i).text(myArray[0][i]);
-        }        
+        }
         if ($("#ans1")[0].outerText == myArray[0][1]) {
             // console.log(myArray[0][1]);
         }
@@ -96,8 +96,8 @@ function checkAns() {
 }
 
 function editArray() {
-    // myArray.splice(randomQuestion, 1); // removes only the first item of the array
-    // console.log(myArray);
+    // myArray.splice(3, 1); // removes only the first item of the array
+    console.log(myArray);
 }
 
 function timerStart() {
@@ -114,26 +114,46 @@ function timerStart() {
     }, 1000);
 }
 
-$(this).click(function(){
-    if ($("#ans1")[0].outerText == myArray[0][1]) {
-        console.log(myArray[0][1]);
 
-    } else if ($("#ans3")[0].outerText == myArray[1][3]) {
-            console.log(myArray[1][3]);
-    
-    } else if ($("#ans4")[0].outerText == myArray[2][4]) {       
-            console.log(myArray[2][4]);
+// if ($("#ans1")[0].outerText == myArray[0][1]) {
+//     $(this).click(function () {
+//         console.log(myArray[0][1]);
+//     })
 
-    } else if ($("#ans2")[0].outerText == myArray[3][2]) {
-        console.log(myArray[3][2]);
+// } else if ($("#ans3")[0].outerText == myArray[1][3]) {
+//     $(this).click(function () {
+//         console.log(myArray[1][3]);
+//     })
 
-    } else if ($("#ans4")[0].outerText == myArray[4][4]) {
-        console.log(myArray[4][4]);
+// } else if ($("#ans4")[0].outerText == myArray[2][4]) {
+//     $(this).click(function () {
+//         console.log(myArray[2][4]);
+//     })
+
+// } else if ($("#ans2")[0].outerText == myArray[3][2]) {
+//     $(this).click(function () {
+//         console.log(myArray[3][2]);
+//     })
+
+// } else if ($("#ans4")[0].outerText == myArray[4][4]) {
+//     $(this).click(function () {
+//         console.log(myArray[4][4]);
+//     })
+// } else {
+//     $(this).click(function () {
+//         console.log('none of these are right.')
+//     })
+// }
+
+$(this).click(function () {
+    if ($(this)[0].outerText == myArray[0][1] ){
+        console.log('correct');
     } else {
-        console.log('none of these are right.')
+        console.log('wrong');
     }
-    
-  });
+})
+
+
 
 
 // console.log(randomizeQuestions());
