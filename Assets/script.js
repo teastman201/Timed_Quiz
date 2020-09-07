@@ -1,4 +1,8 @@
 questionsDiv.style.visibility = 'hidden';
+var seconds;
+var timerSec = 75;
+var countdown = document.querySelector(".countdown");
+
 myArray = [
     // Start questions for quiz
     questOne = ["Commonly used data types DO NOT incldue:", "strings", 'booleans', "alerts", 'numbers'],
@@ -8,7 +12,6 @@ myArray = [
     questFive = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']
     // End questions for quiz
 ]
-
 console.log(myArray);
 
 function startQuiz() {
@@ -19,10 +22,11 @@ function startQuiz() {
     // Gets random question to start game
     randomizeQuestions();
     // Populates quiz game
-    populateQuiz();
+    populateQuiz();    
+    // Starts game timer
+    timerStart();
 
 }
-
 
 function randomizeQuestions() {
     questionsArray = [
@@ -80,6 +84,21 @@ function editArray() {
     myArray.splice(randomQuestion, 1); // removes only the first item of the array
     console.log(myArray);
 }
+
+function timerStart() {
+    seconds = setInterval(function () {
+
+        timerSec--;
+        countdown.textContent = timerSec;
+    
+        if (timerSec === 0 || timerSec < 1) {
+            clearInterval(seconds);
+            alert("You have run out of time. Game over.");
+        }
+    
+    }, 1000);
+}
+
 // console.log(randomizeQuestions());
 
 
