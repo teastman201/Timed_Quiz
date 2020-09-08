@@ -25,55 +25,93 @@ function startQuiz() {
     // Deletes start screen
     document.getElementById("removeElem").remove();
     // Gets random question to start game
-    randomizeQuestions();
+    randomizedQuestions();
     // Populates quiz game
     populateQuiz();
     // Starts game timer
     timerStart();
+    shuffle(arr);
 
 }
 
-function randomizeQuestions() {
-    questionsArray = [
-        myArray[0][0],
-        myArray[1][0],
-        myArray[2][0],
-        myArray[3][0],
-        myArray[4][0]
-    ]
-    randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+function shuffle(array) {
+    var currentIndex = array.length, temporaryValue, randomIndex;
+
+    // While there remain elements to shuffle...
+    while (0 !== currentIndex) {
+
+        // Pick a remaining element...
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+
+        // And swap it with the current element.
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+    }
+
+    return array;
+}
+
+// Used like so
+var arr = [myArray[0][0], myArray[1][0], myArray[2][0], myArray[3][0], myArray[4][0]];
+shuffle(arr);
+// console.log(arr);
+
+function randomizedQuestions() {
+    // questionsArray = [
+    //     myArray[0][0],
+    //     myArray[1][0],
+    //     myArray[2][0],
+    //     myArray[3][0],
+    //     myArray[4][0]
+    // ]
+    
+    for (let i = 0; i < arr.length; i++){
+        // console.log(arr[i]);
+        randomQuestion = arr[i];
+    }
+
+    // ask randomizedQuestions[i]
+  // run function that checks if the answer is correct
+    // randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+    
 
     // arrayIndex = myArray.indexOf(randomQuestion);
     // console.log(questionsArray); // returns multiple responses for the same line in console.
     return randomQuestion;
 };
 
-function getArrayIndex() {
+console.log(randomizedQuestions());
 
-    for (i = 0; i < myArray.length; i++) {
-        // i;
-        console.log(myArray[i]);
 
-        for (t = 0; t < myArray[i].length; t++){
-            console.log(myArray[i][t])
 
-            let arrayIndex = myArray[i][t];
-            console.log(arrayIndex.indexOf("alerts"));
-        }
-        // return i;
-        // arrayIndex = 
-        
-    }   
-    
-    
-}
+// function getArrayIndex() {
+
+//     for (i = 0; i < myArray.length; i++) {
+//         // i;
+//         // console.log(myArray[i]);
+
+//         for (t = 0; t < myArray[i].length; t++) {
+//             // console.log(myArray[i][t])
+
+//             let arrayIndex = myArray[i][t];
+//             // console.log(arrayIndex.indexOf("alerts"));
+//         }
+//         // return i;
+//         // arrayIndex = 
+
+//     }
+
+
+// }
 
 // for (i = 0; i < myArray.length; i++) {
 //     console.log(i);
-    
+
 // }
 
-console.log(getArrayIndex());
+// console.log(getArrayIndex());
 
 // arrayString
 // .indexOf(arrayString)
@@ -89,7 +127,7 @@ function populateQuiz() {
 
     if (randomQuestion == myArray[0][0] || randomQuestion == myArray[1][0] || randomQuestion == myArray[2][0] || randomQuestion == myArray[3][0] || randomQuestion == myArray[4][0]) {
 
-        $("#quesBody").text(randomizeQuestions());
+        $("#quesBody").text(randomizedQuestions());
 
     }
 
@@ -122,8 +160,8 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[0][1]) {
                 wrongChoice();
                 nextQuestion();
-                console.log(timerSec);
-                timerSec -= 10;
+                // console.log(timerSec);
+                // timerSec -= 10;
             }
         })
 
@@ -150,8 +188,8 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[3][2]) {
                 wrongChoice();
                 nextQuestion();
-                console.log(timerSec);
-                timerSec -= 10;
+                // console.log(timerSec);
+                // timerSec -= 10;
             }
         })
 
@@ -178,8 +216,8 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[1][3]) {
                 wrongChoice();
                 nextQuestion();
-                console.log(timerSec);
-                timerSec -= 10;
+                // console.log(timerSec);
+                // timerSec -= 10;
             }
         })
 
@@ -205,8 +243,8 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[2][4]) {
                 wrongChoice();
                 nextQuestion();
-                console.log(timerSec);
-                timerSec -= 10;
+                // console.log(timerSec);
+                // timerSec -= 10;
             }
         })
 
@@ -232,8 +270,8 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[4][4]) {
                 wrongChoice();
                 nextQuestion();
-                console.log(timerSec);
-                timerSec -= 10;
+                // console.log(timerSec);
+                // timerSec -= 10;
             }
         })
 
@@ -262,8 +300,8 @@ function timerStart() {
 }
 
 function nextQuestion() {
-    // Selects next random question
-    randomizeQuestions();
+    // Selects next question
+    randomizedQuestions();
     // Populates quiz game
     populateQuiz();
 
@@ -275,7 +313,7 @@ function nextQuestion() {
 
 function rightChoice() {
 
-    setInterval(function () {
+   seconds = setInterval(function () {
 
         displayTimer--;
         correctAns.style.visibility = 'visible';
@@ -292,7 +330,7 @@ function rightChoice() {
 
 function wrongChoice() {
 
-    setInterval(function () {
+   seconds = setInterval(function () {
 
         displayTimer--;
         wrongAns.style.visibility = 'visible';
