@@ -7,6 +7,7 @@ var countdown = document.querySelector(".countdown");
 var score = 0;
 var displayTimer = 1;
 
+
 myArray = [
     // Start questions for quiz
     questOne = ["Commonly used data types DO NOT incldue:", "alerts", 'booleans', "strings", 'numbers'],
@@ -32,39 +33,78 @@ function startQuiz() {
 
 }
 
-var randQues = function randomizeQuestions(randomQuestion) {
+function randomizeQuestions() {
     questionsArray = [
-        questOne[0],
-        questTwo[0],
-        questThree[0],
-        questFour[0],
-        questFive[0]
+        myArray[0][0],
+        myArray[1][0],
+        myArray[2][0],
+        myArray[3][0],
+        myArray[4][0]
     ]
     randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
+
+    // arrayIndex = myArray.indexOf(randomQuestion);
     // console.log(questionsArray); // returns multiple responses for the same line in console.
     return randomQuestion;
 };
 
-// function getArrayIndex() {
-//     return findIndex(randomQuestion);    
+function getArrayIndex() {
+
+    for (i = 0; i < myArray.length; i++) {
+        // i;
+        console.log(myArray[i]);
+
+        for (t = 0; t < myArray[i].length; t++){
+            console.log(myArray[i][t])
+
+            let arrayIndex = myArray[i][t];
+            console.log(arrayIndex.indexOf("alerts"));
+        }
+        // return i;
+        // arrayIndex = 
+        
+    }   
+    
+    
+}
+
+// for (i = 0; i < myArray.length; i++) {
+//     console.log(i);
+    
 // }
 
-console.log(myArray.findIndex(randQues));
+console.log(getArrayIndex());
+
+// arrayString
+// .indexOf(arrayString)
+
+// (arrayIndex);
+// console.log(myArray[0].indexOf("alerts"));
+
+
+
+
 
 function populateQuiz() {
 
     if (randomQuestion == myArray[0][0] || randomQuestion == myArray[1][0] || randomQuestion == myArray[2][0] || randomQuestion == myArray[3][0] || randomQuestion == myArray[4][0]) {
+
         $("#quesBody").text(randomizeQuestions());
+
     }
+
     checkAns();
 
 };
+
+
 
 function checkAns() {
     if (randomQuestion == myArray[0][0]) {
         for (i = 1; i < myArray[0].length; i++) {
             $("#ans" + i).text(myArray[0][i]);
         }
+
         $("#ans1").click(function () {
             if ($(this)[0].outerText == myArray[0][1]) {
                 rightChoice();
@@ -74,7 +114,7 @@ function checkAns() {
                 console.log(score);
 
 
-            } 
+            }
 
         })
 
@@ -86,14 +126,15 @@ function checkAns() {
                 timerSec -= 10;
             }
         })
-        // if ($("#ans1")[0].outerText == myArray[0][1]) {
-        //     // console.log(myArray[0][1]);
-        // }
+
     }
+
     if (randomQuestion == myArray[3][0]) {
+
         for (i = 1; i < myArray[3].length; i++) {
             $("#ans" + i).text(myArray[3][i]);
         }
+
         $("#ans2").click(function () {
             if ($(this)[0].outerText == myArray[3][2]) {
                 rightChoice();
@@ -101,9 +142,10 @@ function checkAns() {
                 score += 1;
                 console.log('gj')
                 console.log(score);
-            } 
+            }
 
         })
+
         $(this).click(function () {
             if ($(this)[0].outerText !== myArray[3][2]) {
                 wrongChoice();
@@ -112,14 +154,15 @@ function checkAns() {
                 timerSec -= 10;
             }
         })
-        // if ($("#ans2")[0].outerText == myArray[3][2]) {
-        //     // console.log(myArray[3][2]);
-        // }
+
     }
+
     if (randomQuestion === myArray[1][0]) {
+
         for (i = 1; i < myArray[1].length; i++) {
             $("#ans" + i).text(myArray[1][i]);
         }
+
         $("#ans3").click(function () {
             if ($(this)[0].outerText == myArray[1][3]) {
                 rightChoice();
@@ -127,7 +170,7 @@ function checkAns() {
                 score += 1;
                 console.log('gj')
                 console.log(score);
-            } 
+            }
 
         })
 
@@ -139,14 +182,14 @@ function checkAns() {
                 timerSec -= 10;
             }
         })
-        // if ($("#ans3")[0].outerText == myArray[1][3]) {
-        //     // console.log(myArray[1][3]);
-        // }
+
     }
+
     if (randomQuestion == myArray[2][0]) {
         for (i = 1; i < myArray[2].length; i++) {
             $("#ans" + i).text(myArray[2][i]);
         }
+
         $("#ans4").click(function () {
             if ($(this)[0].outerText == myArray[2][4]) {
                 rightChoice();
@@ -154,7 +197,7 @@ function checkAns() {
                 score += 1;
                 console.log('gj');
                 console.log(score);
-            } 
+            }
 
         })
 
@@ -166,14 +209,14 @@ function checkAns() {
                 timerSec -= 10;
             }
         })
-        // if ($("#ans4")[0].outerText == myArray[2][4]) {
-        //     // console.log(myArray[2][4]);
-        // }
+
     }
+
     if (randomQuestion == myArray[4][0]) {
         for (i = 1; i < myArray[4].length; i++) {
             $("#ans" + i).text(myArray[4][i]);
         }
+
         $("#ans4").click(function () {
             if ($(this)[0].outerText == myArray[4][4]) {
                 rightChoice();
@@ -181,7 +224,7 @@ function checkAns() {
                 score += 1;
                 console.log('gj')
                 console.log(score);
-            } 
+            }
 
         })
 
@@ -193,9 +236,7 @@ function checkAns() {
                 timerSec -= 10;
             }
         })
-        // if ($("#ans4")[0].outerText == myArray[4][4]) {
-        //     // console.log(myArray[4][4]);
-        // }
+
     }
 
     editArray();
@@ -221,15 +262,15 @@ function timerStart() {
 }
 
 function nextQuestion() {
+    // Selects next random question
     randomizeQuestions();
     // Populates quiz game
     populateQuiz();
-    // Starts game timer
-    // timerStart();
+
 }
 
 
-console.log(timerSec);
+// console.log(timerSec);
 
 
 function rightChoice() {
@@ -274,6 +315,6 @@ function wrongChoice() {
 
 
 
-// console.log(randomizeQuestions());
+
 
 
