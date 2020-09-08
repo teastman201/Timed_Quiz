@@ -24,13 +24,15 @@ function startQuiz() {
     questionsDiv.style.visibility = 'visible';
     // Deletes start screen
     document.getElementById("removeElem").remove();
-    // Gets random question to start game
-    randomizedQuestions();
+    // Shuffles array
+    shuffle(arr);
+    // Gets random question to start game    
+    chooseQuestion();
     // Populates quiz game
     populateQuiz();
     // Starts game timer
     timerStart();
-    shuffle(arr);
+    
 
 }
 
@@ -58,7 +60,7 @@ var arr = [myArray[0][0], myArray[1][0], myArray[2][0], myArray[3][0], myArray[4
 shuffle(arr);
 // console.log(arr);
 
-function randomizedQuestions() {
+function chooseQuestion() {
     // questionsArray = [
     //     myArray[0][0],
     //     myArray[1][0],
@@ -70,19 +72,22 @@ function randomizedQuestions() {
     for (let i = 0; i < arr.length; i++){
         // console.log(arr[i]);
         randomQuestion = arr[i];
+        console.log(arr[i]);
     }
-
-    // ask randomizedQuestions[i]
+    
+    // ask chooseQuestion[i]
   // run function that checks if the answer is correct
     // randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
     
-
+    // console.log('randomQuestion');
     // arrayIndex = myArray.indexOf(randomQuestion);
     // console.log(questionsArray); // returns multiple responses for the same line in console.
     return randomQuestion;
 };
 
-console.log(randomizedQuestions());
+console.log(chooseQuestion())
+
+// console.log(chooseQuestion());
 
 
 
@@ -127,7 +132,8 @@ function populateQuiz() {
 
     if (randomQuestion == myArray[0][0] || randomQuestion == myArray[1][0] || randomQuestion == myArray[2][0] || randomQuestion == myArray[3][0] || randomQuestion == myArray[4][0]) {
 
-        $("#quesBody").text(randomizedQuestions());
+        $("#quesBody").text(chooseQuestion());
+        // console.log('populateQuiz');
 
     }
 
@@ -160,7 +166,7 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[0][1]) {
                 wrongChoice();
                 nextQuestion();
-                // console.log(timerSec);
+                console.log('wrong');
                 // timerSec -= 10;
             }
         })
@@ -188,7 +194,7 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[3][2]) {
                 wrongChoice();
                 nextQuestion();
-                // console.log(timerSec);
+                console.log('wrong');
                 // timerSec -= 10;
             }
         })
@@ -216,7 +222,7 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[1][3]) {
                 wrongChoice();
                 nextQuestion();
-                // console.log(timerSec);
+                console.log('wrong');
                 // timerSec -= 10;
             }
         })
@@ -243,7 +249,7 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[2][4]) {
                 wrongChoice();
                 nextQuestion();
-                // console.log(timerSec);
+                console.log('wrong');
                 // timerSec -= 10;
             }
         })
@@ -270,7 +276,7 @@ function checkAns() {
             if ($(this)[0].outerText !== myArray[4][4]) {
                 wrongChoice();
                 nextQuestion();
-                // console.log(timerSec);
+                console.log('wrong');
                 // timerSec -= 10;
             }
         })
@@ -300,11 +306,13 @@ function timerStart() {
 }
 
 function nextQuestion() {
+
+    // console.log('before random')
     // Selects next question
-    randomizedQuestions();
+    chooseQuestion();
     // Populates quiz game
     populateQuiz();
-
+    // console.log('after random')
 }
 
 
@@ -313,13 +321,13 @@ function nextQuestion() {
 
 function rightChoice() {
 
-   seconds = setInterval(function () {
+   display = setInterval(function () {
 
         displayTimer--;
         correctAns.style.visibility = 'visible';
 
         if (displayTimer === 0) {
-            clearInterval(seconds);
+            clearInterval(display);
             correctAns.style.visibility = 'hidden';
         }
 
@@ -330,13 +338,13 @@ function rightChoice() {
 
 function wrongChoice() {
 
-   seconds = setInterval(function () {
+    display = setInterval(function () {
 
         displayTimer--;
         wrongAns.style.visibility = 'visible';
 
         if (displayTimer == 0) {
-            clearInterval(seconds);
+            clearInterval(display);
             wrongAns.style.visibility = 'hidden';
         }
 
