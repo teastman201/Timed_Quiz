@@ -61,13 +61,7 @@ shuffle(arr);
 // console.log(arr);
 
 function chooseQuestion() {
-    // questionsArray = [
-    //     myArray[0][0],
-    //     myArray[1][0],
-    //     myArray[2][0],
-    //     myArray[3][0],
-    //     myArray[4][0]
-    // ]
+    
     
     for (let i = 0; i < arr.length; i++){
         // console.log(arr[i]);
@@ -75,58 +69,11 @@ function chooseQuestion() {
         console.log(arr[i]);
     }
     
-    // ask chooseQuestion[i]
-  // run function that checks if the answer is correct
-    // randomQuestion = questionsArray[Math.floor(Math.random() * questionsArray.length)];
     
-    // console.log('randomQuestion');
-    // arrayIndex = myArray.indexOf(randomQuestion);
-    // console.log(questionsArray); // returns multiple responses for the same line in console.
     return randomQuestion;
 };
 
 console.log(chooseQuestion())
-
-// console.log(chooseQuestion());
-
-
-
-// function getArrayIndex() {
-
-//     for (i = 0; i < myArray.length; i++) {
-//         // i;
-//         // console.log(myArray[i]);
-
-//         for (t = 0; t < myArray[i].length; t++) {
-//             // console.log(myArray[i][t])
-
-//             let arrayIndex = myArray[i][t];
-//             // console.log(arrayIndex.indexOf("alerts"));
-//         }
-//         // return i;
-//         // arrayIndex = 
-
-//     }
-
-
-// }
-
-// for (i = 0; i < myArray.length; i++) {
-//     console.log(i);
-
-// }
-
-// console.log(getArrayIndex());
-
-// arrayString
-// .indexOf(arrayString)
-
-// (arrayIndex);
-// console.log(myArray[0].indexOf("alerts"));
-
-
-
-
 
 function populateQuiz() {
 
@@ -286,11 +233,6 @@ function checkAns() {
     editArray();
 }
 
-function editArray() {
-    // myArray.splice(3, 1); // removes only the first item of the array
-    // console.log(myArray);
-}
-
 function timerStart() {
     seconds = setInterval(function () {
 
@@ -307,16 +249,16 @@ function timerStart() {
 
 function nextQuestion() {
 
-    // console.log('before random')
+    
     // Selects next question
     chooseQuestion();
     // Populates quiz game
     populateQuiz();
-    // console.log('after random')
+    
 }
 
 
-// console.log(timerSec);
+
 
 
 function rightChoice() {
