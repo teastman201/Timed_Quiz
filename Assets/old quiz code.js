@@ -328,7 +328,17 @@
 //     }
 
     
-    
+//     seconds = setInterval(function () {
+
+//         timerSec--;
+//         countdown.textContent = timerSec;
+
+//         if (timerSec === 0 || timerSec < 1) {
+//             clearInterval(seconds);
+//             alert("You've run out of time. Game over.");
+//         }
+
+//     }, 1000);
 // }
 
 // startButton.addEventListener("click", startGame);
