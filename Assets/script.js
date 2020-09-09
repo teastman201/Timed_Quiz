@@ -1,6 +1,7 @@
+// Hides unwanted div
 questionsDiv.style.visibility = 'hidden';
-correctAns.style.visibility = 'hidden';
-wrongAns.style.visibility = 'hidden';
+
+// Global variables
 var seconds;
 var timerSec = 75;
 var countdown = document.querySelector(".countdown");
@@ -8,17 +9,18 @@ var score = 0;
 var displayTimer = 1;
 
 
+
+// Questions and answers for quiz in single nestedArray (remove nestedArray)
 myArray = [
-    // Start questions for quiz
     questOne = ["Commonly used data types DO NOT incldue:", "alerts", 'booleans', "strings", 'numbers'],
     questTwo = ["The condition in an if / else statement is enclosed within ___.", "quotes", 'curly brackets', "parentheses", 'square brackets'],
     questThree = ["Arrays in JavaScript can be used to store ___.", "numbers and strings", 'booleans', "other arrays", 'all of the above'],
     questFour = ["String values must be enclosed within __ when being assigned to variables.", "commas", 'quotes', "curly brackets", 'parentheses'],
-    questFive = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']
-    // End questions for quiz
+    questFive = ["A very useful tool used during development and debugging for printing content to the debugger is:", "JavaScript", 'terminal/bash', "for loops", 'console.log']    
 ]
-// console.log(myArray);
 
+var questionsArray = [myArray[0][0], myArray[1][0], myArray[2][0], myArray[3][0], myArray[4][0]];
+var questionsArrayIndex = 0;
 
 function startQuiz() {
     // Hides answer check area
@@ -33,8 +35,6 @@ function startQuiz() {
     populateQuiz();
     // Starts game timer
     timerStart();
-
-
 }
 
 function shuffle(array) {
@@ -57,18 +57,13 @@ function shuffle(array) {
 }
 
 
-var questionsArray = [myArray[0][0], myArray[1][0], myArray[2][0], myArray[3][0], myArray[4][0]];
 
-var questionsArrayIndex = 0;
 
 
 
 function chooseQuestion() {
-
-
-    
-    randomQuestion = questionsArray[questionsArrayIndex];
    
+    randomQuestion = questionsArray[questionsArrayIndex]; 
 
     return randomQuestion;
 };
@@ -94,9 +89,7 @@ function populateQuiz() {
 function nextQuestion() {
 
     // next question ot increment global variable 
-    if (questionsArrayIndex < 5) {
-        questionsArrayIndex++;
-    }
+    
     console.log(questionsArrayIndex);
     console.log(chooseQuestion());
 
@@ -105,6 +98,9 @@ function nextQuestion() {
     // Populates quiz game
     populateQuiz();
 
+    if (questionsArrayIndex < 5) {
+        questionsArrayIndex++;
+    }
 }
 
 
@@ -161,15 +157,27 @@ function checkAns() {
             // console.log(score);
 
 
-        } else if ($(this)[0].innerText !== myArray[0][1] ||
-        $(this)[0].innerText !== myArray[3][2] ||
-        $(this)[0].innerText !== myArray[1][3] ||
-        $(this)[0].innerText !== myArray[2][4] ||
-        $(this)[0].innerText !== myArray[4][4]) {
+        } else if ($(this)[0].innerText == myArray[0][2] || $(this)[0].innerText == myArray[0][3] || $(this)[0].innerText == myArray[0][4]) {
             console.log($(this)[0].innerText + " wrong")
             wrongChoice();
             nextQuestion();
 
+        } else if ($(this)[0].innerText == myArray[1][1] || $(this)[0].innerText == myArray[1][2] || $(this)[0].innerText == myArray[1][4]){
+            console.log($(this)[0].innerText + " wrong")
+            wrongChoice();
+            nextQuestion();
+        } else if ($(this)[0].innerText == myArray[2][1] || $(this)[0].innerText == myArray[2][2] || $(this)[0].innerText == myArray[2][3]){
+            console.log($(this)[0].innerText + " wrong")
+            wrongChoice();
+            nextQuestion();
+        } else if ($(this)[0].innerText == myArray[3][1] || $(this)[0].innerText == myArray[3][3] || $(this)[0].innerText == myArray[3][4]){     
+            console.log($(this)[0].innerText + " wrong")
+            wrongChoice();
+            nextQuestion();
+        } else if ($(this)[0].innerText == myArray[4][1] || $(this)[0].innerText == myArray[4][2] || $(this)[0].innerText == myArray[4][3]){
+            console.log($(this)[0].innerText + " wrong")
+            wrongChoice();
+            nextQuestion();
         }
 
     })
