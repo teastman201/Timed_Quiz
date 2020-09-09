@@ -50,7 +50,7 @@
     margin: 3px;
 }
 
-.buttons {
+.allButtons {
     background-color: rgb(138, 9, 138);
     color: white;
     border: none;
@@ -58,6 +58,7 @@
     margin: 3px;
     display: block;
 }
+
 
 .instructions {
     width: 75%;

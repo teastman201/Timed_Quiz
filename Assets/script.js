@@ -242,10 +242,10 @@ function finalQuestion() {
     para.innerText = "Enter your initials: ";
     document.querySelector(".card-body").appendChild(para);
     var input = document.createElement("input");
-    input.className = "inputInit";
+    input.className = "inputInit mx-auto text-center";
     document.querySelector(".card-body").appendChild(input);
     var button = document.createElement("button");
-    button.className = "submit"
+    button.className = "submit  allButtons mx-auto text-center"
     button.innerText = "Submit";
     document.querySelector(".card-body").appendChild(button);
     document.querySelector(".button-group").remove();
