@@ -23,6 +23,9 @@ var questionsArrayIndex = 0;
 
 var viewHighScores = document.querySelector('.anchor');
 
+var correctAns = document.getElementById("correctAns");
+var wrongAns = document.getElementById("wrongAns");
+
 function startQuiz() {
     // Hides answer check area
     questionsDiv.style.visibility = 'visible';
@@ -128,21 +131,35 @@ function checkAns() {
 
 }
 
-function nextQuestion() {
+function nextQuestion() {    
+
+    setTimeout(function(){
+        correctAns.innerText = '';
+    }, 1000);
+
+    setTimeout(function(){
+        wrongAns.innerText = '';
+    }, 1000);
+    
 
     // next question ot increment global variable 
     
     console.log(questionsArrayIndex);
     // console.log(chooseQuestion());
 
-    // Selects next question
-    chooseQuestion();
-    // Populates quiz game
-    populateQuiz();
-
     if (questionsArrayIndex < 5) {
         questionsArrayIndex++;
+        chooseQuestion();
+        populateQuiz();
+        console.log(questionsArrayIndex);
     }
+
+    // Selects next question
+    
+    // Populates quiz game
+    
+
+    
     if (questionsArrayIndex == 5){
         finalQuestion();
     }
@@ -157,7 +174,7 @@ $(".buttons").on('click', function () {
         $(this)[0].innerText == myArray[4][4]) {
         console.log($(this)[0].innerText + " right")
         rightChoice();
-        nextQuestion();
+        
         userScore += 1;
         // console.log('gj')
         // console.log(userScore);
@@ -166,24 +183,24 @@ $(".buttons").on('click', function () {
     } else if ($(this)[0].innerText == myArray[0][2] || $(this)[0].innerText == myArray[0][3] || $(this)[0].innerText == myArray[0][4]) {
         console.log($(this)[0].innerText + " wrong")
         wrongChoice();
-        nextQuestion();
+        
 
     } else if ($(this)[0].innerText == myArray[1][1] || $(this)[0].innerText == myArray[1][2] || $(this)[0].innerText == myArray[1][4]){
         console.log($(this)[0].innerText + " wrong")
         wrongChoice();
-        nextQuestion();
+        
     } else if ($(this)[0].innerText == myArray[2][1] || $(this)[0].innerText == myArray[2][2] || $(this)[0].innerText == myArray[2][3]){
         console.log($(this)[0].innerText + " wrong")
         wrongChoice();
-        nextQuestion();
+        
     } else if ($(this)[0].innerText == myArray[3][1] || $(this)[0].innerText == myArray[3][3] || $(this)[0].innerText == myArray[3][4]){     
         console.log($(this)[0].innerText + " wrong")
         wrongChoice();
-        nextQuestion();
+        
     } else if ($(this)[0].innerText == myArray[4][1] || $(this)[0].innerText == myArray[4][2] || $(this)[0].innerText == myArray[4][3]){
         console.log($(this)[0].innerText + " wrong")
         wrongChoice();
-        nextQuestion();
+        
     }
 
 })
@@ -197,49 +214,30 @@ function timerStart() {
         if (timerSec === 0 || timerSec < 1) {
             clearInterval(seconds);
             alert("You have run out of time. Game over.");
+            finalQuestion();
         }
 
     }, 1000);
 }
 
 
+
 function rightChoice() {
-
-    // display = setInterval(function () {
-
-    //     displayTimer--;
-    //     correctAns.style.visibility = 'visible';
-
-    //     if (displayTimer === 0) {
-    //         clearInterval(display);
-    //         correctAns.style.visibility = 'hidden';
-    //     }
-
-    // }, 1000);
-
-
+    correctAns.innerText = "Correct";
+    nextQuestion();
 }
 
 function wrongChoice() {
-
-    // display = setInterval(function () {
-
-    //     displayTimer--;
-    //     wrongAns.style.visibility = 'visible';
-
-    //     if (displayTimer == 0) {
-    //         clearInterval(display);
-    //         wrongAns.style.visibility = 'hidden';
-    //     }
-
-    // }, 1000);
-
-
+    wrongAns.innerText = "Wrong";
+    nextQuestion();  
+    timerSec -= 10;
+    console.log(timerSec);
 }
 
 function finalQuestion() {
+    clearInterval(seconds);
     $("#quesBody").text("All Done!");
-    document.querySelector(".card-body").append(`Your final score is ${userScore}`);
+    document.querySelector(".card-body").append(`Your final score is ${userScore+1}`);
     var para = document.createElement("p");
     para.innerText = "Enter your initials: ";
     document.querySelector(".card-body").appendChild(para);
@@ -250,7 +248,6 @@ function finalQuestion() {
     button.className = "submit"
     button.innerText = "Submit";
     document.querySelector(".card-body").appendChild(button);
-    // document.querySelector(".card-body").append(`Enter your initials: `);
     document.querySelector(".button-group").remove();
 
     $(".submit").on('click', function (){
