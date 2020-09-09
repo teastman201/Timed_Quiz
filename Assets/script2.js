@@ -15,8 +15,6 @@ for (var i = 0; i < info.length; i++) {
     console.log(info[i]);
 }
 
-
-
 function goBack() {
     window.location = "./index.html";
 }
