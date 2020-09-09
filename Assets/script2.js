@@ -22,8 +22,9 @@ function goBack() {
 }
 
 function clearScores() {
+    window.location = "./index.html";
     localStorage.clear();
-    console.log('cleared');
+    console.log('cleared');    
 }
 
 goBackButton.addEventListener("click", goBack);
