@@ -3,7 +3,7 @@
 * Tristan Eastman Email: teastman85@gmail.com
 
 ## License
-#### [This project is licensed under the terms of the MIT license.](LICENSE)
+### [This project is licensed under the terms of the MIT license.](LICENSE)
 
 ## Table of Contents
 * [Description](#description)
