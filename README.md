@@ -12,8 +12,8 @@
 * [Link-to-Deployed-Website](#link)
 
 ## Description
-Timed quiz game featuring javascript questions. 
-This game saves highscores.
+* Timed quiz game featuring javascript questions. 
+* This game saves highscores.
 
 ## Technologies Used
 * [jQuery](https://jquery.com/)
@@ -21,17 +21,17 @@ This game saves highscores.
 * [bootstrap](https://getbootstrap.com/)
 
 ## User Story
-AS A student.
-I WANT a timed quiz game.
-SO THAT I can test my coding knoweldge.
+* AS A student.
+* I WANT a timed quiz game.
+* SO THAT I can test my coding knoweldge.
 
 ## GIF 
 ![gif](https://media.giphy.com/media/THI8tnLd6JYLCWyHyG/giphy.gif)
 
 ## Screenshots
-* <img src="./Assets/image.png" alt="desktop screenshot of timed quiz game start.">
+<img src="./Assets/image.png" alt="desktop screenshot of timed quiz game start.">
 
-* <img src="./Assets/image_1.png" alt="desktop screenshot of in-game.">
+<img src="./Assets/image_1.png" alt="desktop screenshot of in-game.">
 
 ## Link to Deployed Website
 https://teastman201.github.io/Timed_Quiz/
