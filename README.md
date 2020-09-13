@@ -1,6 +1,7 @@
 # Timed_Quiz
 ## Author & Contact Email
-####  Tristan Eastman Email: teastman85@gmail.com
+####  Tristan Eastman 
+##### Email: teastman85@gmail.com
 
 ## License
 #### [This project is licensed under the terms of the MIT license.](LICENSE)
