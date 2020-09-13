@@ -18,7 +18,7 @@
 
 ## Technologies Used
 * [jQuery](https://jquery.com/)
-* [fontAwesome](https://fontawesome.com/)
+* [fontawesome](https://fontawesome.com/)
 * [bootstrap](https://getbootstrap.com/)
 
 ## User Story
