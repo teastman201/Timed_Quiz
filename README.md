@@ -26,7 +26,7 @@ I WANT a timed quiz game.
 SO THAT I can test my coding knoweldge.
 
 ## GIF 
-![gif](https://media.giphy.com/media/H4zX9UeAMQInRf6XSn/giphy.gif)
+![gif](https://media.giphy.com/media/THI8tnLd6JYLCWyHyG/giphy.gif)
 
 ## Screenshots
 * <img src="./Assets/image.png" alt="desktop screenshot of timed quiz game start.">
