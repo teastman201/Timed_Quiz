@@ -8,9 +8,10 @@
 
 ## Table of Contents
 * [Description](#description)
+* [Technologies Used](#technologies-used)
 * [User-Story](#user-story)
 * [Screenshots](#screenshots)
-* [Link-to-Deployed-Website](#link)
+* [Link-to-Deployed-Website](#link-to-deployed-website)
 
 ## Description
 #### Timed quiz game featuring javascript questions. 
@@ -26,13 +27,10 @@
 #### I WANT a timed quiz game.
 #### SO THAT I can test my coding knoweldge.
 
-## GIF 
-![gif](https://media.giphy.com/media/THI8tnLd6JYLCWyHyG/giphy.gif)
-
 ## Screenshots
 <img src="./Assets/image.png" alt="desktop screenshot of timed quiz game start.">
-
 <img src="./Assets/image_1.png" alt="desktop screenshot of in-game.">
+![gif](https://media.giphy.com/media/THI8tnLd6JYLCWyHyG/giphy.gif)
 
 ## Link to Deployed Website
 #### https://teastman201.github.io/Timed_Quiz/
